@@ -13,18 +13,23 @@
 var nomeUtente = prompt("Il nome utente");
 var selezioneFacce = prompt("Inserisci il numero di facce del dado");
 if(parseInt(selezioneFacce) > 1){
-  var dadoCPU = Math.round(Math.random()* parseInt(selezioneFacce - 1))+1;
+  var dadoCPU = Math.floor(Math.random()* parseInt(selezioneFacce - 1))+1;
+  
   console.log(dadoCPU);
+  
   document.getElementById("Dadi").innerHTML = '<br> il numero della cpu è: '+dadoCPU;
-  var dadoUtente = Math.round(Math.random()* parseInt(selezioneFacce - 1))+1;
+  
+  var dadoUtente = Math.floor(Math.random()* parseInt(selezioneFacce - 1))+1;
   console.log(dadoUtente);
-  document.getElementById("Dadi").innerHTML = '<br> il tuo numero '+nomeUtente+' è: '+dadoUtente;
   if(dadoCPU < dadoUtente){
     console.log("hai vinto");
-    document.getElementById("Dadi").innerHTML = '<br> 🔥!!!!HAI '+nomeUtente+' VINTO!!!!🔥';
+    document.getElementById("Dadi").innerHTML = '<br> il numero della cpu è: '+dadoCPU+'<br> il tuo numero '+nomeUtente+' è: '+dadoUtente+'<br>'+nomeUtente+' 🔥!!!!HAI VINTO!!!!🔥';
+  }else if(dadoCPU === dadoUtente){
+    console.log("hai pareggiato");
+    document.getElementById("Dadi").innerHTML = '<br> il numero della cpu è: '+dadoCPU+'<br> il tuo numero '+nomeUtente+' è: '+dadoUtente+'<br>'+nomeUtente+' 🔥!!!!HAI PAREGGIATO!!!!🔥';
   }else{
     console.log("hai perso");
-    document.getElementById("Dadi").innerHTML = '<br> 🔥!!!!HAI '+nomeUtente+' PERSO!!!!🔥';
+    document.getElementById("Dadi").innerHTML = '<br> il numero della cpu è: '+dadoCPU+'<br> il tuo numero '+nomeUtente+' è: '+dadoUtente+'<br>'+nomeUtente+' 🔥!!!!HAI PERSO!!!!🔥';
   }
 
 }else{
