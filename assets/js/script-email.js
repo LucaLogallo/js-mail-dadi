@@ -1,18 +1,18 @@
 /*
   variabili
   -emailInserita = email che viene inserita dall'utente da confrontare con le email nel vettore
-  -listaAccount = è la lista che contiene tutte le email che possono accedere al servizio
+  -vettoreAccount = è il vettore che contiene tutte le email che possono accedere al servizio
   
   faccio inserire l'email all'utente
   inizia un ciclo for che gira fino alla fine del vettore con un confronto tra l'email inserita e ogni singola email contenuta nel vettore
-  appena l'email viene trovata attivo un flag e interrompo la ricerca appena viene trovata
+  appena l'email viene trovata attivo un flag e interrompo la ricerca 
 */
 
 
 var emailInserita = prompt("Inserire l'email per poter accedere ai servizi");
-if(emailInserita.endsWith("@gmail.com")||emailInserita.endsWith("@hotmail.it")||emailInserita.endsWith("@virgilio.it")||emailInserita.endsWith("@gmail.com")||emailInserita.endsWith("@libero.it")){
+if(emailInserita.endsWith("@gmail.com")||emailInserita.endsWith("@hotmail.it")||emailInserita.endsWith("@virgilio.it")||emailInserita.endsWith("@libero.it")){
 
-  var listaAccount =[
+  var vettoreAccount =[
     "lucalogallo@gmail.com",
     "lucalogallo@hotmail.it",
     "lucalogallo@virgilio.it",
@@ -21,8 +21,8 @@ if(emailInserita.endsWith("@gmail.com")||emailInserita.endsWith("@hotmail.it")||
   
   var flag = false;
   
-  for(i = 0 ; i < listaAccount.length; i++){
-    if(emailInserita === listaAccount[i]){
+  for(i = 0 ; i < vettoreAccount.length; i++){
+    if(emailInserita === vettoreAccount[i]){
       flag=true;
       break;
     }
@@ -35,4 +35,5 @@ if(emailInserita.endsWith("@gmail.com")||emailInserita.endsWith("@hotmail.it")||
   }
 }else{
   alert("email inserita in un formato non valido");
+  window.close();
 }
